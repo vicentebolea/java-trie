@@ -30,6 +30,9 @@ public class Trie {
         if (height != itemSet.size())
             return false;
 
+        // Returns if it contains the key
+        if (contains(itemSet))
+            return false;
 
         TrieNode currentNode = getRootNode();
         for (int i = 0; i < height; i++) {
@@ -41,8 +44,7 @@ public class Trie {
             } else {
                 TrieNode nextNode = new TrieNode();
 
-                // If it is last node, we set it as a leaf 
-                // node
+                // If it is last node, set it as a leaf node
                 if (i == height-1) {
                     nextNode.setLeafNode(true);
                     nextNode.add(itemSet);
